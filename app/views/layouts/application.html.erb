@@ -9,10 +9,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <div class="flex justify-end items-center py-5 px-5">
+      <%= link_to 'Logout', new_card_path, class: "rounded-lg py-3 px-5 bg-sky-900 text-white block font-medium text-xl" %>
+    </div>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-2 px-5 flex">
       <%= yield %>
     </main>
   </body>

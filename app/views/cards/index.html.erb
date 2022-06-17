@@ -5,7 +5,6 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl flex p-10">Meet the Team</h1>
-    <%= link_to 'New card', new_card_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div class="grid grid-cols-2 gap-10 flex justify-items-center py-20 bg-sky-100">
@@ -17,7 +16,7 @@
           <%= truncate(strip_tags(card.description), length: 200) %>
         </p>
         <div class="place-self-end rounded-lg py-3 px-5 bg-sky-900 text-white block font-medium">
-          <%= link_to 'Show', card, class: 'hover:underline' %>
+          <%= link_to 'Show', card_path(card.id), class: 'hover:underline' %>
         </div>
 
       </div>
