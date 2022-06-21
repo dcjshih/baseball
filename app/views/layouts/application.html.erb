@@ -9,8 +9,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <div class="flex justify-end items-center py-5 px-5">
-      <%= link_to 'Logout', new_card_path, class: "rounded-lg py-3 px-5 bg-sky-900 text-white block font-medium text-xl" %>
+
+
+    <div class="flex justify-start items-center px-5 space-x-10 py-1 px-5 bg-[#042c54] text-white block font-medium text-3xl">
+      <%= image_tag("wads-logo.jpg", :alt => "wads-logo", class: 'h-28 py-5') %>
+      <%= link_to 'Home', public_landing_path %>
+      <%= link_to 'Meet the Team', directory_path %>
+      <%= link_to 'Login/Logout', new_card_path %>
     </div>
   </head>
 
