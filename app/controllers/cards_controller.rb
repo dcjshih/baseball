@@ -19,6 +19,9 @@ class CardsController < ApplicationController
   def edit
   end
 
+  def flip
+  end
+
   # POST /cards or /cards.json
   def create
     @card = Card.new(card_params)
@@ -56,7 +59,7 @@ class CardsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_card
@@ -65,6 +68,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:name, :description, :image_url)
+      params.require(:card).permit(:name, :description, :image_url, :quirk, :about_me, :advice)
     end
 end

@@ -5,10 +5,11 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
     
+    
     <%= render @card %>
-
+    
     <div class="py-10 flex justify-between">
-      <%= link_to 'Flip', cards_path, class: "ml-2 rounded-lg py-3 px-5 bg-[#042c54] inline-block font-medium text-white flex justify-start" %>
+      <%= link_to 'Flip', flip_card_path, class: "ml-2 rounded-lg py-3 px-5 bg-[#042c54] inline-block font-medium text-white flex justify-start" %>
       <%= link_to 'Back to cards', cards_path, class: "ml-2 rounded-lg py-3 px-5 bg-slate-200 inline-block font-medium text-black flex justify-end" %>
     </div>
   </div>
