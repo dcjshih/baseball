@@ -20,6 +20,7 @@ class CardsController < ApplicationController
   end
 
   def flip
+    @card = Card.find(params[:id])
   end
 
   # POST /cards or /cards.json
@@ -68,6 +69,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:name, :description, :image_url, :quirk, :about_me, :advice)
+      params.require(:card).permit(:name, :description, :image_url, :about_me, :quirks, :advice)
     end
 end

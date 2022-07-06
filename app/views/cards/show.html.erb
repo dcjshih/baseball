@@ -11,6 +11,8 @@
     <div class="py-10 flex justify-between">
       <%= link_to 'Flip', flip_card_path, class: "ml-2 rounded-lg py-3 px-5 bg-[#042c54] inline-block font-medium text-white flex justify-start" %>
       <%= link_to 'Back to cards', cards_path, class: "ml-2 rounded-lg py-3 px-5 bg-slate-200 inline-block font-medium text-black flex justify-end" %>
+      <%= link_to 'Edit Card', edit_card_path(@card), class: "ml-2 rounded-lg py-3 px-5 bg-slate-200 inline-block font-medium text-black flex justify-end" %>
+      <%= link_to 'Destroy', @card, class: 'hover:underline',data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
   </div>
 </div>

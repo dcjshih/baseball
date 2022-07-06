@@ -5,7 +5,6 @@
   <h1 class="text-xl font-bold"><%= card.name %></h1>
   <p class="mb w-80 h-30">
     <%= card.description %>
-    <%= truncate(strip_tags(card.description), length: 200) %>
   </p>
 </div>
 
@@ -20,6 +19,16 @@
       <%= link_to 'Show', card_path(card.id), class: 'hover:underline' %>
     </div>
 </div>
+
+<%- elsif controller.action_name == 'flip' %>
+  <div class="flex flex-col space-y-4 bg-white p-10 rounded outline outline-2 outline-black w-100">
+    <h1 class="text-medium font-bold"> About me </h1>
+    <%= card.about_me %>
+    <%= card.quirks %>
+    <%= card.advice %>
+  </div>
+</div>
+
 <%- end %>
 
 
