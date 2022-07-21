@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w(html turbo_stream */*).include? request_format.to_s
+  end
+end
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -25,6 +39,16 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+
+    # Configure the parent class to the custom controller.
+    config.parent_controller = 'TurboDeviseUserController'
+    config.navigational_formats = ['*/*', :html, :turbo_stream]
+  
+  
+    # Warden configuration
+    config.warden do |manager|
+      manager.failure_app = TurboFailureApp
+    end
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
